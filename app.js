@@ -87,15 +87,5 @@ var writeScript = function (magnetLink) {
     fs.writeFileSync( __dirname + '/download.txt', magnetLink);
 };
 
-// contact page
-// app.get('/contact', function(req, res) {
-//     console.log(req.query);
-//     res.render('contact', {qs: req.query});
-// });
-
-// app.post('/contact', urlencodedParser, function(req, res) {
-//     console.log(req.body);
-//     res.render('contact-success', {data: req.body});
-// });
-
 app.listen(3000);
+console.log('Listening on port 3000');
