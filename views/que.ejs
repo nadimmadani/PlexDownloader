@@ -1,0 +1,23 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <% include partials/nav.ejs %>
+    <div class="content">
+        <h1>Download Que</h1>
+        <p>All the downloaded movies are sent here.</p>
+    <ul>
+        <% torrents.forEach(function(torrent) { %>
+            <li>
+                <h4><%= torrent.title %> </h4>
+                <div>
+                    <h3>Pending: <%= torrent.pending %></h3>
+                    <h3><a href="/delete/<%= torrent._id %>">DELETE</a></h3>
+                </div>
+            </li>
+        <% }); %>
+    </ul>
+    </div>
+</body>
+</html>

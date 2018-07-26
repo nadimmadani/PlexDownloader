@@ -1,0 +1,29 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <% include partials/nav.ejs %>
+    <div class="content">
+        <form id='search-form' method="POST" action="/search">
+            <input type="text" name="searchTerm" placeholder="movie title" style="text-align: center; width: 100%"/>
+            <input type="submit" value="search"/>
+        </form>
+        <p>Search results for <%= searchTerm %>: </p>
+        <ul>
+            <% data.forEach(function(item){ %>
+                <li>
+                    <h4><%= item.name %></h4>
+                    <div>
+                        <a href="/que/<%= item.id %>"><img class="icon" src="../assets/downloadIcon.png" ></img></a>
+                        <h3>Download</h3>
+                        <h3>SE: <%= item.seeders %></h3>
+                        <h3>LE: <%= item.leechers %></h3>
+                    </div>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+</body>
+</html>
